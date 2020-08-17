@@ -17,12 +17,19 @@ let lowerCase = ["a", "b" ,"c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 let upperCase = ["A", "B" ,"C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 let specialChar = ["!", "#", "$", "%", "&", "*", "+", "-", ":", ";", "<", ">", "=", "?", "@", "^", "_", "~"]
+var final = []
 
 function criteria() {
   var passwordLegnth = prompt("How long should your password be? (Any length between 8 and 128 characters is valid")
   if (passwordLegnth >= 8 && passwordLegnth <= 128){
-
+    if (alert("Do you want to include lowercase letter? Click OK for YES and Cancel for NO")) {
+      final.concat(lowerCase)
+    }
+    console.log(final)
   } else {
     alert("Please try again and enter a number between 8 and 128")
   }
 }
+
+console.log(final)
+console.log(lowerCase)
