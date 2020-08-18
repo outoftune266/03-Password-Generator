@@ -21,8 +21,11 @@ const specialChar = ["!", "#", "$", "%", "&", "*", "+", "-", ":", ";", "<", ">",
 let final = [];
 let password = "";
 
-// Builds array 
-function writePassword() {
+/*Builds array of characters ot select from, 
+selects them with randomized indeces, 
+puts them into a string,
+sends string to writePassword()*/
+function generatePassword() {
   let passwordLegnth = prompt("How long should your password be? (Any length between 8 and 128 characters is valid");
   if (passwordLegnth >= 8 && passwordLegnth <= 128){
     if (confirm("Do you want to include lowercase letters? Click OK for YES and Cancel for NO")) {
@@ -32,13 +35,11 @@ function writePassword() {
     } if (confirm("Do you want to include numbers? Click OK for YES and Cancel for NO")) {
       final = final.concat(numbers);
     } if (confirm("Do you want to include special characters? Click OK for YES and Cancel for NO")) {
-      final = final.concat(numbers);
+      final = final.concat(specialChar);
     } 
-    console.log(final)
     for (i = 0; i < passwordLegnth; i++) {
       password = password + final[Math.floor(Math.random() * final.length)]
-
-    } console.log(password)
+    } return password;
   } else {
     alert("Please try again and enter a number between 8 and 128");
   }
